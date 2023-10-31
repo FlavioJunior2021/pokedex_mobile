@@ -3,6 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeScreen } from "./src/screens/Home";
 import { LikedPokemonUserScreen } from "./src/screens/LikedPokemonUser";
 import { ProfileScreen } from "./src/screens/Profile";
+import { LoginScreen } from "./src/screens/Login";
+
 import {
 	MaterialCommunityIcons,
 	FontAwesome,
@@ -12,6 +14,18 @@ import {
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+
+
+	const auth = false;
+
+	if (!auth) {
+		return (
+			<NavigationContainer>
+				<LoginScreen />
+			</NavigationContainer>
+		)
+	}
+
 	return (
 		<NavigationContainer>
 			<Tab.Navigator>
