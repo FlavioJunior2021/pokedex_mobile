@@ -14,8 +14,6 @@ import {
 const Tab = createBottomTabNavigator();
 
 export default function App() {
-
-
 	const auth = false;
 
 	if (!auth) {
@@ -23,7 +21,7 @@ export default function App() {
 			<NavigationContainer>
 				<LoginScreen />
 			</NavigationContainer>
-		)
+		);
 	}
 
 	return (
@@ -40,7 +38,7 @@ export default function App() {
 								size={size}
 							/>
 						),
-						headerShown: false
+						headerShown: false,
 					}}
 				/>
 				<Tab.Screen
@@ -54,7 +52,7 @@ export default function App() {
 								size={size}
 							/>
 						),
-						headerShown: false
+						headerShown: false,
 					}}
 				/>
 				<Tab.Screen
@@ -68,7 +66,7 @@ export default function App() {
 								size={size}
 							/>
 						),
-						headerShown: false
+						headerShown: false,
 					}}
 				/>
 			</Tab.Navigator>

@@ -3,11 +3,12 @@ import { TouchableOpacity, Text, ActivityIndicator, StyleSheet } from "react-nat
 type ButtonProps = {
 	children: React.ReactNode
 	isLoading: boolean
+	onPress: () => void
 }
 
-export function TouchableOpacityButton({children, isLoading}: ButtonProps) {
+export function TouchableOpacityButton({children, isLoading, onPress}: ButtonProps) {
 	return (
-		<TouchableOpacity disabled={isLoading} style={styles.container}>
+		<TouchableOpacity disabled={isLoading} style={styles.container} onPress={onPress}>
 			<Text style={styles.text}>
 			{isLoading ? <ActivityIndicator size={'small'} color={'#fefefe'}/> : children}
 			</Text>
@@ -17,18 +18,19 @@ export function TouchableOpacityButton({children, isLoading}: ButtonProps) {
 
 const styles = StyleSheet.create({
 	container: {
-		width: 246,
-		height: 36,
+		width: 330,
+		height: 52,
 		padding: 8,
 		borderRadius: 4,
-		backgroundColor: 'yellow',
+		backgroundColor: 'red',
 		justifyContent: 'center',
 		alignContent: 'center',
-		alignItems: 'center'
+		alignItems: 'center',
+		marginBottom: 12
 	},
 	text: {
-		color: '#0000f',
+		color: '#fefefe',
 		fontSize: 16,
-		fontWeight: "300",
+		fontWeight: "400",
 	}
 })
